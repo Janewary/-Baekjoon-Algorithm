@@ -11,20 +11,12 @@ public class Main{
         int B = Integer.parseInt(st.nextToken());
         int C = Integer.parseInt(br.readLine());
         
-        if(C < 60){
-            if(B+C < 60) System.out.println(A + " " + (B+C));
-            else {
-                A++;
-                B = (B+C)%60;
-                if(A == 24) A = 0;
-                System.out.println(A + " " + B);
-            }
-        } else {
-            A = A + ((B+C)/60);
-            B = (B+C)%60;
-            if(A >= 24) A = A%24;
-            System.out.println(A + " " + B);
-        }
+        A = A + ((B+C)/60);
+        B = (B+C)%60;
         
+        if(A >= 24){
+            A = A%24;
+        }
+        System.out.println(A + " " + B);
     }
 }
