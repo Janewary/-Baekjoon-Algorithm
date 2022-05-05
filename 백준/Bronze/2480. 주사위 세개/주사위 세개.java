@@ -14,9 +14,7 @@ public class Main{
         int reward = 0;
         
         if(a != b && b != c && a != c){
-            if(a > b && a > c) reward = a * 100;
-            else if(a < b && b > c) reward = b * 100;
-            else reward = c * 100;
+            reward = Math.max(a, Math.max(b, c)) * 100;
         }
         else{
             if(a == b && b == c){
