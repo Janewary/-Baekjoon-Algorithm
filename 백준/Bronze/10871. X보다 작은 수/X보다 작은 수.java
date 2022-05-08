@@ -10,14 +10,14 @@ public class Main{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
-        StringTokenizer st1 = new StringTokenizer(br.readLine(), " ");
-        int N = Integer.parseInt(st1.nextToken());
-        int X = Integer.parseInt(st1.nextToken());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int N = Integer.parseInt(st.nextToken());
+        int X = Integer.parseInt(st.nextToken());
         
-        StringTokenizer st2 = new StringTokenizer(br.readLine(), " ");
+        st = new StringTokenizer(br.readLine(), " ");
         
         for(int i=0; i<N; i++){
-            int num = Integer.parseInt(st2.nextToken());
+            int num = Integer.parseInt(st.nextToken());
             if(num < X) bw.write(num + " ");
         }
         br.close();
