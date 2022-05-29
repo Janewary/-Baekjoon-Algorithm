@@ -8,13 +8,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         
-        int cnt = 0;
-        
-        while (st.hasMoreTokens()) {
-            st.nextToken();
-            cnt++;
-        }
-        
-        System.out.print(cnt);
+        System.out.print(st.countTokens());
     }
 }
