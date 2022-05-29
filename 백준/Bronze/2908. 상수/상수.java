@@ -8,24 +8,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         
-        String A = st.nextToken();
-        String B = st.nextToken();
+        int A = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+        int B = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
         
-        String max = "";
-        
-        for(int i=2; i>=0; i--) {
-            if(B.charAt(i) < A.charAt(i)) {
-                max = A;
-                break;
-            }
-            else if(B.charAt(i) > A.charAt(i)) {
-                max = B;
-                break;
-            }
-        }
-        
-        for(int i=2; i>=0; i--) {
-            System.out.print(max.charAt(i));
-        }
+        System.out.println(A > B ? A : B);
     }
 }
