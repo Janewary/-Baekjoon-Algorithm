@@ -7,40 +7,26 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int x = Integer.parseInt(br.readLine());
         
-        int i = 1;
-        int cnt = 0;
+        int cross_count = 1, prev_count_sum = 0;
         
-        while(cnt < x) { 
-            cnt = cnt + i;
-            i++;
-        }
-        i = i - 1;
-        
-        cnt = 0;
-        
-        for(int j = 1; j < i; j++) { 
-            cnt = cnt + j;
-        }
-        
-        int index = x - cnt - 1;
-        
-        int[] up = new int[i];
-        int[] down = new int[i];
-        
-        if((i % 2) == 0) { 
+        while(true) { 
+            if(x <= prev_count_sum + cross_count) { 
+                if(cross_count % 2 == 1) { 
+                    System.out.println((cross_count - (x - prev_count_sum - 1)) + "/" + (x - prev_count_sum));
+                    break;
+                }
+                else { 
+                    System.out.println((x - prev_count_sum) + "/" + (cross_count - (x - prev_count_sum - 1)));
+                    break;
+                }
+            }
             
-            for(int j = 0; j < i; j++) { 
-                up[j] = j + 1;
-                down[j] = i - j;
+            else { 
+                prev_count_sum = prev_count_sum + cross_count;
+                cross_count++;
+                    
             }
-            System.out.println(up[index] + "/" + down[index]);
-        }
-        else { 
-            for(int j = 0; j < i; j++) { 
-                up[j] = i - j;
-                down[j] = j + 1;
-            }
-            System.out.println(up[index] + "/" + down[index]);
+            
         }
         
     }
