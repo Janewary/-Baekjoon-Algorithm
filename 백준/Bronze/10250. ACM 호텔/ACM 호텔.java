@@ -10,37 +10,22 @@ public class Main {
         
         StringTokenizer st;
         int h = 0;
-        int w = 0;
         int guest = 0;
         
         for(int i=0; i<t; i++) {
             st = new StringTokenizer(br.readLine(), " ");
+            
             h = Integer.parseInt(st.nextToken());
-            w = Integer.parseInt(st.nextToken());
+            st.nextToken();
             guest = Integer.parseInt(st.nextToken());
             
-            int floor = 0;
-            int room = 0;
-            
             if(guest % h != 0) { 
-            floor = guest % h;
-            room = (guest / h) + 1;
+                System.out.println((guest % h)*100 + ((guest / h) + 1));
             }
             else { 
-                floor = h;
-                room = guest / h;
-            }
-            
-            if(room < 10) { 
-                System.out.println(floor + "0" + room);
-            }
-            else { 
-                System.out.print(floor);
-                System.out.println(room);
+                System.out.println(h * 100 + (guest / h));
             }
         }
-        
-        
         
         
     }
